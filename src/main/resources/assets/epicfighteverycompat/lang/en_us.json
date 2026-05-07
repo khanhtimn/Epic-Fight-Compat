@@ -1,0 +1,17 @@
+{
+
+  "config.efcompat.mode_switching": "Mode Switching",
+  "config.efcompat.mode_switching.tooltip": "Settings related to automatic switching between vanilla and Epic Fight modes.",
+  "config.efcompat.auto_switch_enabled": "Auto Switch Enabled",
+  "config.efcompat.auto_switch_enabled.tooltip": "Automatically switch to Epic Fight mode when equipping a combat weapon,\nand to vanilla mode when equipping a non-combat item.\nRespects the 'canSwitchPlayerMode' gamerule.",
+  "config.efcompat.use_weapon_category_detection": "Weapon Category Detection",
+  "config.efcompat.use_weapon_category_detection.tooltip": "Use Epic Fight's WeaponCategory system to auto-detect combat weapons.\nThis catches modded weapons registered via class hierarchy, regex, or data packs.\nWhen disabled, only Epic Fight's manual config lists are used for detection.",
+  "config.efcompat.enforce_mode_on_toggle": "Enforce Mode On Toggle",
+  "config.efcompat.enforce_mode_on_toggle.tooltip": "Prevent manual mode toggle (default: R key) from switching to an\ninappropriate mode. Combat weapon forces Epic Fight, otherwise forces vanilla.\nRespects the 'canSwitchPlayerMode' gamerule.",
+  "config.efcompat.rendering": "Rendering",
+  "config.efcompat.rendering.tooltip": "Settings related to first-person and third-person rendering modifications.",
+  "config.efcompat.vanilla_first_person_for_non_combat": "Vanilla First-Person for Non-Combat",
+  "config.efcompat.vanilla_first_person_for_non_combat.tooltip": "Use vanilla first-person hand rendering when holding a non-combat item\nwhile in Epic Fight mode. Prevents the Epic Fight animated hand model\nfrom showing for items like torches, food, or blocks.",
+  "config.efcompat.punchy_idle_override": "Punchy Idle Override",
+  "config.efcompat.punchy_idle_override.tooltip": "When Punchy is installed, let Punchy handle first-person arm rendering\nduring idle states in Epic Fight combat mode.\nEpic Fight retains control during attacks, blocking, and other combat actions.\nPunchy features like weapon inspection still work during idle."
+}

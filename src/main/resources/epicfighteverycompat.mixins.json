@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "dev.khanhtimn.efcompat.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "epicfight.world.capabilities.entitypatch.player.PlayerPatchMixin"
+  ],
+  "client": [
+    "epicfight.client.events.engine.RenderEngineMixin",
+    "epicfight.client.world.capabilities.entitypatch.player.LocalPlayerPatchMixin",
+    "punchy.HandEquipStateMachineMixin",
+    "punchy.PunchyArmRendererMixin",
+    "punchy.PoseHandlerAccessor"
+  ],
+  "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

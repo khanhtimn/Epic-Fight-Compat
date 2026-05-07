@@ -1,0 +1,16 @@
+{
+  "config.efcompat.mode_switching": "Chuyển đổi Chế độ",
+  "config.efcompat.mode_switching.tooltip": "Cài đặt liên quan đến việc tự động chuyển đổi giữa chế độ vanilla và Epic Fight.",
+  "config.efcompat.auto_switch_enabled": "Bật Tự động Chuyển",
+  "config.efcompat.auto_switch_enabled.tooltip": "Tự động chuyển sang chế độ Epic Fight khi cầm vũ khí cận chiến,\nvà chuyển về chế độ vanilla khi cầm vật phẩm không phải vũ khí.\nTôn trọng luật chơi 'canSwitchPlayerMode'.",
+  "config.efcompat.use_weapon_category_detection": "Phát hiện theo Nhóm Vũ khí",
+  "config.efcompat.use_weapon_category_detection.tooltip": "Sử dụng hệ thống WeaponCategory của Epic Fight để tự động phát hiện vũ khí.\nĐiều này giúp nhận diện các vũ khí từ mod khác thông qua cấu trúc class, regex hoặc data packs.\nNếu tắt, chỉ các danh sách thủ công của Epic Fight mới được dùng để nhận diện.",
+  "config.efcompat.enforce_mode_on_toggle": "Ép buộc Chế độ khi Bật/Tắt",
+  "config.efcompat.enforce_mode_on_toggle.tooltip": "Ngăn chặn việc chuyển đổi chế độ thủ công (mặc định: phím R) sang chế độ\nkhông phù hợp. Vũ khí cận chiến luôn ép buộc chế độ Epic Fight, ngược lại ép buộc vanilla.\nTôn trọng luật chơi 'canSwitchPlayerMode'.",
+  "config.efcompat.rendering": "Hiển thị",
+  "config.efcompat.rendering.tooltip": "Cài đặt liên quan đến các sửa đổi hiển thị ở góc nhìn thứ nhất và thứ ba.",
+  "config.efcompat.vanilla_first_person_for_non_combat": "Góc nhìn Vanilla cho Vật phẩm thường",
+  "config.efcompat.vanilla_first_person_for_non_combat.tooltip": "Sử dụng hiển thị tay góc nhìn thứ nhất của vanilla khi cầm vật phẩm không phải vũ khí\ntrong lúc ở chế độ Epic Fight. Ngăn mô hình tay có hoạt ảnh của Epic Fight\nhiển thị đối với các vật phẩm như đuốc, thức ăn hoặc khối block.",
+  "config.efcompat.punchy_idle_override": "Ghi đè trạng thái đứng yên bởi Punchy",
+  "config.efcompat.punchy_idle_override.tooltip": "Khi có cài đặt Punchy, cho phép Punchy xử lý hiển thị tay góc nhìn thứ nhất\ntrong trạng thái đứng yên ở chế độ chiến đấu Epic Fight.\nEpic Fight vẫn giữ quyền điều khiển trong lúc tấn công, đỡ đòn và các hành động chiến đấu khác.\nCác tính năng của Punchy như xem xét vũ khí vẫn hoạt động khi đứng yên."
+}
