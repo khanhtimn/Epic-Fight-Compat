@@ -1,5 +1,6 @@
 package dev.khanhtimn.efcompat;
 
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import yesman.epicfight.api.animation.LivingMotion;
 import yesman.epicfight.api.animation.LivingMotions;
@@ -8,6 +9,7 @@ import yesman.epicfight.config.ClientConfig;
 import yesman.epicfight.world.capabilities.EpicFightCapabilities;
 import yesman.epicfight.world.capabilities.item.CapabilityItem;
 import yesman.epicfight.world.capabilities.item.CapabilityItem.WeaponCategories;
+import yesman.epicfight.world.capabilities.item.WeaponCategory;
 
 import java.util.EnumSet;
 
@@ -36,7 +38,8 @@ public final class CombatHelper {
         CapabilityItem cap = EpicFightCapabilities.getItemStackCapability(stack);
         if (cap.isEmpty()) return false;
 
-        return !NON_COMBAT_CATEGORIES.contains(cap.getWeaponCategory());
+        WeaponCategory category = cap.getWeaponCategory();
+        return !(category instanceof WeaponCategories wc && NON_COMBAT_CATEGORIES.contains(wc));
     }
 
     public static boolean isEpicFightIdle(LocalPlayerPatch playerPatch) {
@@ -55,7 +58,7 @@ public final class CombatHelper {
     }
 
     public static boolean isOffhandValidForWeapon(LocalPlayerPatch playerPatch) {
-        CapabilityItem cap = playerPatch.getHoldingItemCapability(net.minecraft.world.InteractionHand.MAIN_HAND);
+        CapabilityItem cap = playerPatch.getHoldingItemCapability(InteractionHand.MAIN_HAND);
         if (cap.isEmpty()) return true;
         return cap.getStyle(playerPatch).canUseOffhand();
     }

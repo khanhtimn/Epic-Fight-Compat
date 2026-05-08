@@ -1,5 +1,4 @@
 {
-
   "config.efcompat.mode_switching": "Mode Switching",
   "config.efcompat.mode_switching.tooltip": "Settings related to automatic switching between vanilla and Epic Fight modes.",
   "config.efcompat.auto_switch_enabled": "Auto Switch Enabled",

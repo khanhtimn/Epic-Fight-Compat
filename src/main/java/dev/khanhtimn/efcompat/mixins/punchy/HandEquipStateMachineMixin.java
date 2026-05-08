@@ -4,7 +4,7 @@ import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import dev.khanhtimn.efcompat.compat.punchy.AnimationBridge;
-import dev.khanhtimn.efcompat.compat.punchy.AnimationBridge.BridgeState;
+import dev.khanhtimn.efcompat.compat.punchy.AnimationBridge.State;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
@@ -32,8 +32,8 @@ public abstract class HandEquipStateMachineMixin {
             return;
         }
 
-        BridgeState current = AnimationBridge.computeState();
-        BridgeState previous = AnimationBridge.getPreviousState();
+        State current = AnimationBridge.computeState();
+        State previous = AnimationBridge.getPreviousState();
         boolean stateChanged = current != previous;
 
         if (stateChanged) {
@@ -53,7 +53,7 @@ public abstract class HandEquipStateMachineMixin {
                 this.renderedOff = copyStack(client.player.getOffhandItem());
             }
             case PUNCHY -> {
-                if (stateChanged && (previous == BridgeState.EPICFIGHT || previous == BridgeState.PUNCHY_SUPPRESSED)) {
+                if (stateChanged && (previous == State.EPICFIGHT || previous == State.PUNCHY_SUPPRESSED)) {
                     syncRequested = false;
                     this.renderedMain = ItemStack.EMPTY;
                     this.renderedOff = ItemStack.EMPTY;

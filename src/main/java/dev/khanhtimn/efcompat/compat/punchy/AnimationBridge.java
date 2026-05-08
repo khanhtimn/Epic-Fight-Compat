@@ -13,57 +13,57 @@ public final class AnimationBridge {
 
     private AnimationBridge() {}
 
-    public enum BridgeState {
+    public enum State {
         PUNCHY,
         PUNCHY_SUPPRESSED,
         EPICFIGHT
     }
 
-    private static BridgeState previousState = BridgeState.PUNCHY;
-    private static BridgeState currentState = BridgeState.PUNCHY;
+    private static State previousState = State.PUNCHY;
+    private static State currentState = State.PUNCHY;
     private static boolean bridgeActive = false;
     private static boolean transitionInProgress = false;
 
-    public static BridgeState computeState() {
+    public static State computeState() {
         if (!Config.PUNCHY_IDLE_OVERRIDE.get()) {
             bridgeActive = false;
-            currentState = BridgeState.PUNCHY;
+            currentState = State.PUNCHY;
             return currentState;
         }
 
         LocalPlayerPatch patch = EpicFightCapabilities.getCachedLocalPlayerPatch();
         if (patch == null || !patch.isEpicFightMode()) {
             bridgeActive = false;
-            currentState = BridgeState.PUNCHY;
+            currentState = State.PUNCHY;
             return currentState;
         }
 
         bridgeActive = true;
 
         if (!CombatHelper.isEpicFightIdle(patch)) {
-            currentState = BridgeState.EPICFIGHT;
+            currentState = State.EPICFIGHT;
         } else if (!CombatHelper.isOffhandValidForWeapon(patch)) {
-            currentState = BridgeState.PUNCHY_SUPPRESSED;
+            currentState = State.PUNCHY_SUPPRESSED;
         } else {
-            currentState = BridgeState.PUNCHY;
+            currentState = State.PUNCHY;
         }
 
         return currentState;
     }
 
     public static boolean shouldCancelEpicFightRender() {
-        return bridgeActive && currentState != BridgeState.EPICFIGHT;
+        return bridgeActive && currentState != State.EPICFIGHT;
     }
 
     public static boolean shouldCancelPunchyRender() {
-        return bridgeActive && currentState != BridgeState.PUNCHY;
+        return bridgeActive && currentState != State.PUNCHY;
     }
 
-    public static BridgeState getPreviousState() {
+    public static State getPreviousState() {
         return previousState;
     }
 
-    public static void setPreviousState(BridgeState state) {
+    public static void setPreviousState(State state) {
         previousState = state;
     }
 

@@ -3,6 +3,7 @@ plugins {
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.141'
     id 'idea'
+    id 'dev.mixinmcp.decompile' version '0.9.0'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -179,6 +180,8 @@ dependencies {
     implementation "maven.modrinth:punchy-fpa:${punchy_version}"
     implementation "maven.modrinth:countereds-smooth-f5:${smooth_f5_version}"
     implementation "maven.modrinth:architectury-api:${architectury_api_version}"
+    implementation "maven.modrinth:parcool:${parcool_version}"
+    implementation "maven.modrinth:official-epic-x-parcool:${epic_x_parcool_version}"
 
 }
 
