@@ -3,7 +3,7 @@ package dev.khanhtimn.efcompat.mixins.epicfight.client.events.engine;
 import com.moulberry.mixinconstraints.annotations.IfModLoaded;
 import dev.khanhtimn.efcompat.CombatHelper;
 import dev.khanhtimn.efcompat.Config;
-import dev.khanhtimn.efcompat.compat.punchy.AnimationBridge;
+import dev.khanhtimn.efcompat.compat.punchy.PunchyAnimationBridge;
 import net.minecraft.world.InteractionHand;
 import net.neoforged.neoforge.client.event.RenderHandEvent;
 import org.spongepowered.asm.mixin.Mixin;
@@ -34,7 +34,7 @@ public abstract class RenderEngineMixin {
     @IfModLoaded("punchy")
     @Inject(method = "epicfight$renderHand", at = @At("HEAD"), cancellable = true, remap = false)
     private void efcompat$letPunchyRenderIdle(RenderHandEvent event, CallbackInfo ci) {
-        if (AnimationBridge.shouldCancelEpicFightRender()) {
+        if (PunchyAnimationBridge.INSTANCE.shouldCancelEpicFightRender()) {
             ci.cancel();
         }
     }

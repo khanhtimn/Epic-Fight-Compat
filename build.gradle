@@ -176,6 +176,8 @@ dependencies {
     implementation "com.mrcrayfish:catalogue-neoforge:${catalouge_version}"
     implementation "maven.modrinth:sodium:${sodium_version}"
     implementation "maven.modrinth:sodium-extra:${sodium_extra_version}"
+    implementation "maven.modrinth:respackopts:${respackopts_version}"
+    implementation "maven.modrinth:libjf:${libjf_version}"
 
     implementation "maven.modrinth:punchy-fpa:${punchy_version}"
     implementation "maven.modrinth:countereds-smooth-f5:${smooth_f5_version}"

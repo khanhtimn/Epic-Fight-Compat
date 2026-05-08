@@ -8,7 +8,9 @@
   "client": [
     "epicfight.client.events.engine.RenderEngineMixin",
     "epicfight.client.world.capabilities.entitypatch.player.LocalPlayerPatchMixin",
+    "epicfight.client.ClientAnimatorAccessor",
     "punchy.HandEquipStateMachineMixin",
+    "punchy.MovementStateMachineMixin",
     "punchy.PunchyArmRendererMixin",
     "punchy.PoseHandlerAccessor"
   ],
